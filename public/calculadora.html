@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora de Velocidad — v = v₀ + gt</title>
+    <link rel="stylesheet" href="estilos.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Calculadora de Velocidad</h1>
+
+      <div class="formula-banner">v = v₀ + g · t</div>
+
+      <!-- Formulario de entrada -->
+      <div class="card">
+        <h2>Datos de entrada</h2>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="v0">Velocidad inicial v₀ (m/s)</label>
+            <input type="number" id="v0" placeholder="Ej: 0" step="any" />
+          </div>
+          <div class="form-group">
+            <label for="g">Aceleración de gravedad g (m/s²)</label>
+            <input type="number" id="g" value="9.8" step="any" />
+          </div>
+          <div class="form-group">
+            <label for="t0">Tiempo inicial t₀ (s)</label>
+            <input type="number" id="t0" placeholder="Ej: 0" step="any" />
+          </div>
+          <div class="form-group">
+            <label for="tf">Tiempo final tf (s)</label>
+            <input type="number" id="tf" placeholder="Ej: 5" step="any" />
+          </div>
+          <div class="form-group">
+            <label for="dt">Intervalo de tiempo Δt (s)</label>
+            <input type="number" id="dt" placeholder="Ej: 1" step="any" />
+          </div>
+        </div>
+        <div id="error" class="error hidden"></div>
+        <button id="btnCalcular" class="btn-calcular">Calcular</button>
+      </div>
+
+      <!-- Resultados (ocultos hasta calcular) -->
+      <div id="resultados" class="hidden">
+        <!-- Paso a paso -->
+        <div class="card">
+          <h2>Cálculo paso a paso</h2>
+          <div id="pasos"></div>
+        </div>
+
+        <!-- Tabla de resultados -->
+        <div class="card">
+          <h2>Tabla de resultados</h2>
+          <div class="table-wrapper">
+            <table id="tablaResultados">
+              <thead>
+                <tr>
+                  <th>Tiempo t (s)</th>
+                  <th>Velocidad v (m/s)</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="calculadora.js"></script>
+  </body>
+</html>
